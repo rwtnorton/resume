@@ -14,8 +14,12 @@ describe Resume::Contact do
      :phone,
      :url,
     ].each do |m|
-      it "has #{m}" do
+      it "responds to #{m}" do
         @it.must_respond_to m
+      end
+
+      it "refutes #{m}?" do
+        @it.send("#{m}?").must_equal false
       end
     end
 
@@ -44,6 +48,10 @@ describe Resume::Contact do
     ].each do |m|
       it "has given #{m}" do
         @it.send(m).must_equal @vals[m]
+      end
+
+      it "asserts #{m}?" do
+        @it.send("#{m}?").must_equal true
       end
     end
 

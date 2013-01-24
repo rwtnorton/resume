@@ -1,11 +1,9 @@
 module Resume
   class Contact
 
-    attr_reader :name
-    attr_reader :address
-    attr_reader :email
-    attr_reader :phone
-    attr_reader :url
+    ATTR_NAMES = [:name, :address, :email, :phone, :url]
+
+    attr_reader *ATTR_NAMES
 
     def initialize(name, opts={})
       @name = name
@@ -13,6 +11,12 @@ module Resume
       @email = opts[:email]
       @phone = opts[:phone]
       @url = opts[:url]
+    end
+
+    ATTR_NAMES.each do |attr|
+      define_method "#{attr}?" do
+        !!send(attr)
+      end
     end
 
   end
