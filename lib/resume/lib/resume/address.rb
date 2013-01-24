@@ -1,3 +1,5 @@
+require 'resume/address/presenter'
+
 module Resume
   class Address
 
