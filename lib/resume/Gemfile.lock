@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    resume (0.0.1)
+      minitest
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (4.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  resume!
